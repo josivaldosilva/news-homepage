@@ -1,0 +1,362 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_slnt/,wght.ttf");
+}
+
+:root {
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+    --only-one-font: 'Inter', sans-serif;
+}
+
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--only-one-font);
+}
+
+
+p {
+    font-size: 15px;
+    font-family: var(--only-one-font);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: var(--Very-dark-blue);
+    font-family: var(--only-one-font);
+}
+
+
+
+/* Interface */
+.c-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* page header contents */
+.c-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 150px;
+}
+
+.c-menu, .c-nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.c-list li {
+    font-size: 1.25em;
+    margin-left: 35px;
+}
+
+.c-list li a:hover {
+    color: var(--Soft-red);
+}
+
+.show-menu, .close-menu {
+    display: none;
+}
+
+
+/* Page main content */
+
+.c-main-content {
+    display: flex;
+    height: fit-content;
+}
+
+.c-main {
+    display: flex;
+    flex-direction: column;
+    width: 1010px;
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.c-main img {
+    display: block;
+    width: 100%;
+    height: 345px;
+}
+
+.c-about-section {
+    display: flex;
+    height: 100%;
+}
+
+.c-main h1 {
+    font-size: 3.4em;
+    font-weight: 800;
+    width: 505px;
+    padding-right: 150px
+}
+
+.c-main .c-about-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    padding: 20px 0 0 0;
+}
+
+.c-about-content p {
+    font-size: 1.3em;
+    color: var(--Dark-grayish-blue);
+    line-height: 1.5;
+    padding-right: 25px;
+}
+
+.c-about-content button {
+    padding: 12px 0;
+    text-transform: uppercase;
+    background: var(--Soft-red);
+    border: 0;
+    font-size: 1.2em;
+    width: 200px;
+    margin-top: 75px;
+}
+
+.c-about-content button a {
+    color: var(--Off-white);
+    letter-spacing: 2px;
+}
+
+.c-about-content button:hover, .c-about-content button a:hover {
+    background: var(--Very-dark-blue);
+    cursor: pointer;
+}
+
+/* Page aside content */
+
+.c-aside {
+    background-color: var(--Very-dark-blue);
+    color: var(--Off-white);
+    padding: 30px 25px 20px 25px;
+    width: 390px;
+    line-height: 2;
+}
+
+.c-aside h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--Soft-orange);
+}
+
+.c-aside p {
+    font-size: 1.1em;
+    color: var(--Grayish-blue);
+}
+
+.c-aside .c-p {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--Dark-grayish-blue);
+    padding-bottom: 20px;
+}
+
+.c-aside h3 a {
+    color: var(--Off-white);
+    font-size: 1.2em;
+}
+
+.c-aside h3 a:hover {
+    color: var(--Soft-orange);
+    cursor: pointer;
+}
+
+
+/* Page footer content styling*/
+
+.c-footer {
+    margin: 30px 0 60px 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--only-one-font);
+}
+
+
+.c-footer .news {
+    display: flex;
+    width: 390px;
+    line-height: 1.7;
+}
+
+.c-footer .news img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.c-footer .news span {
+    font-size: 2em;
+    color: var(--Grayish-blue);
+}
+
+.c-footer .news a {
+    font-weight: 800;
+}
+
+.c-footer .news a:hover {
+    color: var(--Soft-red);
+}
+
+.c-footer .news p {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--Grayish-blue);
+}
+
+
+
+/* Mobile */
+
+@media (max-width: 375px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .c-header {
+        height: 100px;
+    }
+
+    .show-menu, .close-menu {
+        display: block;
+    }
+
+    .close-menu {
+        position:absolute;
+        top: 35px;
+        right: 20px;
+    }
+
+    .c-nav-menu {
+        flex-direction: column; 
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        transition: .3s;
+        pointer-events: all;
+    }
+
+    .c-nav-menu.active {
+        left: 0;
+    }
+
+
+    .c-list {
+        flex-direction: column;
+        background-color: var(--Off-white);
+        align-items: flex-start;
+        width: 70%;
+        transition: .6s;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        padding-top: 160px;
+        z-index: 5;
+    } 
+
+    .c-list li {
+        margin: 0 0 30px 25px;
+    }
+
+
+    .c-main {
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .c-img {
+        width: 100%;
+    }
+    
+    .c-main-content, .c-about-section {
+        display: block;
+    }
+
+    .c-main .c-about-content {
+        width: 100%;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .c-main h1 {
+        font-family: var(--only-one-font);
+        width: 100%;
+        font-size: 3em;
+        font-weight: 800;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .c-about-content p {
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .c-about-content button {
+        margin-top: 25px;
+    }
+
+
+    .c-aside, .c-footer .news {
+        width: 100%;
+        margin: 50px 0 0 0;
+    }
+
+    .c-aside {
+        padding: 0 20px 20px 20px ;
+    }
+
+    .c-aside h3 {
+        font-size: 18px;
+    }
+
+    .c-aside p {
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .c-footer .news {
+        padding: 0;
+    }
+
+    .c-footer .news img {
+        width: 110px;
+        margin-right: 8px;
+    }
+
+    .c-about-news {
+        padding-left: 10px;
+    }
+
+    .c-footer {
+        display: block;
+        margin: 0 0 50px 0;
+    }
+}
